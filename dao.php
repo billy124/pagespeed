@@ -1,12 +1,12 @@
 <?php
 require(__DIR__.'/initializer.php');
 
-$servername = "localhost";
-$username = "jaber";
-$password = "addpeople1";
-$dbname = "csvTest";
+
 
 class dao{
-
+    private $servername = "localhost";
+    private $username = "jaber";
+    private $password = "addpeople1";
+    private $dbname = "csvTest";
 }
 ?>

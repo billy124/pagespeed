@@ -4,23 +4,23 @@ class csv{
 
 	//class attributes
 	public $name;
-	public $appType;
-	public $tempName;
-	public $error;
-	public $size;
+//	public $appType;
+//	public $tempName;
+//	public $error;
+//	public $size;
 	
 	//class construct
-	public __construct($file){
-		$this->setFields($file);
+	public function __construct(){
+		$this->name="";
+//                $this->appType="";
+//                $this->tempName="";
+//                $this->error=0;
+//                $this->size=0;
 	}
-	
-	private function setFields($file){ 
-		$this->name = $file['name'];
-		$this->appType=$file['type'];
-		$this->tempName=$file['temp_name'];
-		$this->error=$file['error'];
-		$this->size=$file['size'];
-	}
+        
+        public function setName($name){
+               $this->name=$name;
+        }
 	
 	//possible enhancement: class setters and getters if we declared the attributes private would be helpful.
 	

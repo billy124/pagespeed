@@ -23,7 +23,7 @@ if($result){
 	$csvObj = new csv($_FILES['uploadFile']);
 	
 	//send the csvObj to the csvConverter to process it and insert ints content into the db
-	csvConv = new csvConverter();
+	$csvConv = new csvConverter();
 	}
 
 //file handling and sending sending to browser then sending to db
