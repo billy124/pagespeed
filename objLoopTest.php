@@ -1,4 +1,5 @@
 <?php
+//just for testing class
 Class MyClass{
 
 	public $name;
