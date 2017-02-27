@@ -25,13 +25,38 @@ class Dao{
         for($i=0;$i<$max;$i++){
             $sql = "INSERT INTO leads (leadURL) VALUES ('".$leadsArrayOfObjects[$i]->BusinessName."')";
             if ($this->connection->query($sql) === FALSE) {
-		echo "Error: " . $sql . "<br>" . $connection->error;
+		echo "Error: " . $sql . "<br>" . $this->connection->error;
+                die;
             }else{
                 $sumRecords++;
             }
         }
         return $sumRecords;
         $this->closeConnection();
+    }
+    
+    public function getGoogleScoreRecord($searchText){
+        $this->openConnection();
+        $sql="SELECT * FROM google_score where google_score.url = '".$searchText."'";
+        
+        
+        $result = $this->connection->query($sql);
+        
+        if($result){
+            
+            $row = $result->fetch_row();
+            if(empty($row)){return FALSE;}
+            
+            /*echo "<pre>";
+            print_r($row);
+            echo "</pre>";*/
+            
+            $googleScoreObj = new GoogleScore($row[1], $row[2], $row[3], $row[4], $row[5], $row[6]);
+           
+            return $googleScoreObj;
+        }else{
+            return FALSE;
+        }
     }
     
     public function openConnection(){
