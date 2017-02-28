@@ -19,15 +19,6 @@ $googleScoreObj = $fetchDb->getGoogleScoreRecord($searchText);
 if($googleScoreObj==FALSE){
     echo "no record found";
 }else{
-    echo "the object content will be populated in an html table";
-    
-    /*foreach($googleScoreObj as $value){
-        echo "<br>-------------<br>".$value;
-    }
-    echo "<br>----googleScoreObje:-------<br>".$googleScoreObj->mobileSpeed;
-    echo "<pre>";
-      print_r($googleScoreObj);
-    echo "</pre>";*/
     $tableDrawer = new TableDrawer($googleScoreObj);
     $tableDrawer->drawTable();
 }
