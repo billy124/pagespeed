@@ -8,11 +8,15 @@ class Lead{
 
 	//class construct
 	public function __construct($name){
-		$this->BusinessName=$name;
+		$this->setBusinessName($name);
 	}
         
-        /*public function setName($name){
+        public function setBusinessName($name){
                $this->BusinessName=$name;
-        }*/
+        }
+	
+	public function getBusinessName(){
+		return 	$this->BusinessName;
+	}
 	
 }
